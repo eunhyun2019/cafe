@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EnhyunTest</string>
+    <string name="store_txt1">매장을</string>
+    <string name="store_txt2">선택해주세요.</string>
 </resources>
