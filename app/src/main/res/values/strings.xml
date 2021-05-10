@@ -2,4 +2,6 @@
     <string name="app_name">EnhyunTest</string>
     <string name="store_txt1">매장을</string>
     <string name="store_txt2">선택해주세요.</string>
+    <string name="join_txt1">회원정보를</string>
+    <string name="join_txt2">입력해주세요.</string>
 </resources>
