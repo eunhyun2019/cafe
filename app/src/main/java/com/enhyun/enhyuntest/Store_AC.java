@@ -1,10 +1,11 @@
 package com.enhyun.enhyuntest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.AppComponentFactory;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Store_AC extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

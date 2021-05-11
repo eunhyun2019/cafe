@@ -1,0 +1,15 @@
+package com.enhyun.enhyuntest;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class Join_terms_AC extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_join_terms);
+    }
+}

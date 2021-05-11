@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Join_terms_AC"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="77dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo_img" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="86dp"
+        android:layout_height="32dp"
+        android:text="고객님"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="168dp"
+        android:layout_height="34dp"
+        android:text="환영합니다!"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="80dp"
+        />
+
+
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="229dp"
+        android:layout_height="25dp"
+        android:button="@drawable/checked_img"
+        android:text="  약관 전체동의"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/terms_line"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="393dp"
+        android:layout_marginBottom="20dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/checked_img"
+        android:text="  이용약관 동의(필수)"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="323dp"
+        android:layout_height="32dp"
+        android:button="@drawable/checked_img"
+        android:text="  개인정보 수집 및 이용동의(필수)"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp" />
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/signup"
+        />
+
+
+</LinearLayout>

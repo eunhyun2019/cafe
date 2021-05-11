@@ -142,7 +142,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="10dp"/>
 
-    <view
+    <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="2dp"
