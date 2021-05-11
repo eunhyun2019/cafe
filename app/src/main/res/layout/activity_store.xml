@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="69dp"
-        android:layout_height="69dp"
-        app:srcCompat="@drawable/logo"
+        android:layout_width="77dp"
+        android:layout_height="88dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/logo_img" />
 
     <TextView
         android:id="@+id/store_txt1"
@@ -37,14 +37,14 @@
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/graziebtn"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="40dp"
+        android:background="@drawable/graziebtn" />
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/planetbtn"
         android:layout_marginTop="50dp"/>

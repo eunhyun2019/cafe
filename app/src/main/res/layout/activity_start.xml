@@ -32,7 +32,10 @@
         android:id="@+id/signup_btn"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@drawable/signup_btn"
+        android:background="@drawable/custom_btn"
+        android:text="회원가입"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         />
 
 
