@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".Store_AC"/>
         <activity android:name=".Join_AC"/>
+        <activity android:name=".Menu_G_AC"/>
+        <activity android:name=".Menu_P_AC"/>
+        <activity android:name=".Room_AC"/>
+        <activity android:name=".Payment_AC"/>
 
     </application>
 
