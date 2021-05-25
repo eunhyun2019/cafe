@@ -24,7 +24,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
-                android:layout_gravity="left"/>
+                android:layout_gravity="left"
+                android:background="#00ff0000"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,10 +135,11 @@
         </LinearLayout>
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:text="사용하기"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"/>
+            android:background="@drawable/btn_str"
+            android:layout_marginTop="10dp"/>
     </RelativeLayout>
 
     <LinearLayout
