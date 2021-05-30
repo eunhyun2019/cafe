@@ -44,7 +44,6 @@
         android:id="@+id/checkBox"
         android:layout_width="229dp"
         android:layout_height="25dp"
-        android:button="@drawable/checked_img"
         android:text="  약관 전체동의"
         android:textSize="20dp"
         android:layout_marginBottom="20dp" />
@@ -62,7 +61,6 @@
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:button="@drawable/checked_img"
         android:text="  이용약관 동의(필수)"
         android:textSize="20dp"
         android:layout_marginBottom="20dp" />
@@ -71,7 +69,6 @@
         android:id="@+id/checkBox3"
         android:layout_width="323dp"
         android:layout_height="32dp"
-        android:button="@drawable/checked_img"
         android:text="  개인정보 수집 및 이용동의(필수)"
         android:textSize="20dp"
         android:layout_marginBottom="20dp" />

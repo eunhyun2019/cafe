@@ -19,7 +19,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txt_login_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -28,7 +28,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txt_login_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
