@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fff">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:id="@+id/arrow"
+                        android:layout_width="20dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentLeft="true"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="메뉴정보"
+                        android:textAlignment="center"
+                        android:textColor="#277E6D"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/cart"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_shopping_bag"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp">
+
+
+
+                    <ImageView
+                        android:id="@+id/cafe_image"
+                        android:layout_width="150dp"
+                        android:layout_height="180dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/americano"
+                        android:layout_alignParentLeft="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:id="@+id/cafe_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
+                            android:text="아메리카노"
+                            android:textSize="20sp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="45dp"
+                                android:text="1,800"
+                                android:textColor="#277E6D"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="45dp"
+                                android:text="원"
+                                android:textSize="15sp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:layout_marginRight="100dp"
+                                />
+                        </RelativeLayout>
+                        <RadioGroup
+                            android:id="@+id/hot_ice_Group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/hot_btn"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/radio_selector"
+                                android:button="@android:color/transparent"
+                                android:gravity="center"
+                                android:text="HOT"
+                                android:layout_weight="1"
+                                android:textColor="@drawable/text_color"/>
+
+                            <RadioButton
+                                android:id="@+id/ice_btn"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/radio_selector"
+                                android:button="@android:color/transparent"
+                                android:checked="true"
+                                android:gravity="center"
+                                android:text="ICE"
+                                android:layout_weight="1"
+                                android:textColor="@drawable/text_color"/>
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:padding="15dp"
+                            android:text="수량"
+                            android:textSize="18sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageButton
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:onClick="decrement"
+                                android:src="@drawable/minus"
+                                android:layout_marginRight="20dp"
+                                android:text="-"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textSize="20sp"
+                                android:id="@+id/value">
+                            </TextView>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="increment"
+                                android:src="@drawable/plus"
+                                android:background="#00ff0000"
+                                android:layout_marginLeft="20dp"
+                                android:text="+"/>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp"
+                                android:text="사이즈"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="18sp"/>
+
+                            <Button
+                                android:id="@+id/size_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:background="#00ff0000"
+                                android:text="REGULAR"
+                                android:textColor="#292828" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#f0f0f0" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:padding="15dp"
+                                android:text="컵 선택"
+                                android:textSize="18sp"/>
+
+                            <Button
+                                android:id="@+id/cup_btn"
+                                android:layout_centerInParent="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:background="#00ff0000"
+                                android:text="일회용컵 >"
+                                android:textColor="#292828" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp"
+                                android:layout_alignParentLeft="true"
+                                android:text="옵션"
+                                android:textSize="18sp"/>
+                            <Button
+                                android:id="@+id/option_btn"
+                                android:layout_centerInParent="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:text="추가 >"
+                                android:background="#00ff0000"
+                                android:textColor="#292828"/>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp"
+                                android:text="드실곳"
+                                android:textSize="18sp"/>
+                            <Button
+                                android:id="@+id/take_btn"
+                                android:layout_centerInParent="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:text="포장(캐리어) >"
+                                android:textSize="15sp"
+                                android:background="#00ff0000"
+                                android:textColor="#292828"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="3dp"
+                            android:paddingLeft="46dp"
+                            android:paddingRight="46dp"
+                            android:layout_alignParentLeft="true"
+                            android:text="즐겨찾기 추가"
+                            android:background="@drawable/btn_str1"
+                            android:textSize="15sp" />
+
+                        <Button
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="46dp"
+                            android:paddingRight="46dp"
+                            android:text="장바구니 담기"
+                            android:background="@drawable/btn_str1"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/OrderNow_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:paddingLeft="75dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="75dp"
+                            android:paddingBottom="10dp"
+                            android:textSize="20sp"
+                            android:text="바로 주문하기"
+                            android:textStyle="bold"
+                            android:background="@drawable/btn"
+                            android:textColor="#fff"
+
+                            />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f0f0f0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="3dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentLeft="true"
+                                android:src="@drawable/square" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="25dp"
+                                android:text="상품설명"/>
+                        </RelativeLayout>
+                        <TextView
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="풍미가 진한 에스프레소에 뜨거운물을 혼합한 깔끔하고 부드러운 맛의 커피 "
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
