@@ -46,16 +46,16 @@ public class Menu_G_AC extends TabActivity {
         /*listMenu = new ArrayList<>();
         listFav = new ArrayList<>();*/
 
-        btnCoffee.setOnClickListener(btnCoffeListener);
-        btnLatte.setOnClickListener(btnCoffeListener);
-        btnTeaLatte.setOnClickListener(btnCoffeListener);
-        btnBubble.setOnClickListener(btnCoffeListener);
-        btnSmoodie.setOnClickListener(btnCoffeListener);
-        btnAde.setOnClickListener(btnCoffeListener);
-        btnDessert.setOnClickListener(btnCoffeListener);
+        btnCoffee.setOnClickListener(btnCoffeeListener);
+        btnLatte.setOnClickListener(btnCoffeeListener);
+        btnTeaLatte.setOnClickListener(btnCoffeeListener);
+        btnBubble.setOnClickListener(btnCoffeeListener);
+        btnSmoodie.setOnClickListener(btnCoffeeListener);
+        btnAde.setOnClickListener(btnCoffeeListener);
+        btnDessert.setOnClickListener(btnCoffeeListener);
     }
 
-    View.OnClickListener btnCoffeListener=new View.OnClickListener() {
+    View.OnClickListener btnCoffeeListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
