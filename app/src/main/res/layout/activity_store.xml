@@ -35,15 +35,15 @@
         android:layout_marginTop="5dp"/>
 
 
-    <Button
-        android:id="@+id/btn1"
+    <ImageButton
+        android:id="@+id/btn_store_g"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/graziebtn" />
 
-    <Button
-        android:id="@+id/btn2"
+    <ImageButton
+        android:id="@+id/btn_store_p"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/planetbtn"

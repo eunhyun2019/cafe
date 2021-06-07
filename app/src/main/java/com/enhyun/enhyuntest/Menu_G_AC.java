@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TabActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -44,5 +45,20 @@ public class Menu_G_AC extends TabActivity {
 
         /*listMenu = new ArrayList<>();
         listFav = new ArrayList<>();*/
+
+        btnCoffee.setOnClickListener(btnCoffeListener);
+        btnLatte.setOnClickListener(btnCoffeListener);
+        btnTeaLatte.setOnClickListener(btnCoffeListener);
+        btnBubble.setOnClickListener(btnCoffeListener);
+        btnSmoodie.setOnClickListener(btnCoffeListener);
+        btnAde.setOnClickListener(btnCoffeListener);
+        btnDessert.setOnClickListener(btnCoffeListener);
     }
+
+    View.OnClickListener btnCoffeListener=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
 }

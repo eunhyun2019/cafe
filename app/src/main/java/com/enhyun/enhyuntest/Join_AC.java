@@ -55,16 +55,16 @@ public class Join_AC extends AppCompatActivity {
                 Response.Listener<String> responseListener= response -> {
 
                     try{
-                            JSONObject jsonObject=new JSONObject(response);
-                            boolean success=jsonObject.getBoolean("success");
-                            if(success) {
-                                Toast.makeText(getApplicationContext(), "회원 가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Join_AC.this, Login_AC.class);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(getApplicationContext(),"회원가입에 실패하셨습니다.",Toast.LENGTH_SHORT).show();
-                                return;
-                            }
+                        JSONObject jsonObject=new JSONObject(response);
+                        boolean success=jsonObject.getBoolean("success");
+                        if(success) {
+                            Toast.makeText(getApplicationContext(), "회원 가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Join_AC.this, Login_AC.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getApplicationContext(),"회원가입에 실패하셨습니다.",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                     }catch (JSONException e){
                         e.printStackTrace();
