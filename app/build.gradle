@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.enhyun.enhyuntest"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion 23
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -31,6 +31,7 @@ android {
 
 dependencies {
 
+    implementation 'com.github.bootpay:client_android_java:3.3.91'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'

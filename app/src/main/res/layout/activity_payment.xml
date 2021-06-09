@@ -130,6 +130,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp">
                 <RadioGroup
+                    android:id="@+id/wayofpayment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <RadioButton
@@ -137,10 +138,17 @@
                         android:layout_height="wrap_content"
                         android:text="포인트 카드"/>
                     <RadioButton
+                        android:id="@+id/pay_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="신용카드"/>
                     <RadioButton
+                        android:id="@+id/pay_kakao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="카카오페이"/>
+                    <RadioButton
+                        android:id="@+id/pay_naver"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="네이버페이"/>
@@ -279,6 +287,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/btn_payment"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"

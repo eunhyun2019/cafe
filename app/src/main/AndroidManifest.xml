@@ -3,6 +3,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.enhyun.enhyuntest">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -17,19 +18,19 @@
         <activity android:name=".Join_terms_AC"/>
         <activity android:name=".Login_AC" />
         <activity android:name=".Start_AC">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".Store_AC"/>
         <activity android:name=".Join_AC"/>
-        <activity android:name=".Menu_G_AC"/>
+        <activity android:name=".Menu_G_AC">
+        </activity>
         <activity android:name=".Menu_P_AC"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".Payment_AC">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
     </application>
