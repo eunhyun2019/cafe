@@ -58,10 +58,10 @@
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/custom_dupbtn"
             android:text="중복확인"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
