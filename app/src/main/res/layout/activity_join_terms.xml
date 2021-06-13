@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Join_terms_AC"
-    android:orientation="vertical"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
 
     <ImageView
@@ -46,7 +51,9 @@
         android:layout_height="25dp"
         android:text="  약관 전체동의"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/imageView5"
@@ -55,8 +62,17 @@
         app:srcCompat="@drawable/terms_line"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="393dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
@@ -73,14 +89,24 @@
         android:textSize="20dp"
         android:layout_marginBottom="20dp" />
 
+    </LinearLayout>
 
-    <View
-        android:id="@+id/view3"
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/terms_line"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#707070"
-        android:layout_marginTop="10dp"/>
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
@@ -93,5 +119,6 @@
         android:textSize="20sp"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"/>
+    </LinearLayout>
 
 </LinearLayout>
