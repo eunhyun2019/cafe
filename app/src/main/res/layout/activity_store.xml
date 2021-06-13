@@ -37,17 +37,19 @@
 
     <ImageButton
         android:id="@+id/btn_store_g"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:background="@drawable/graziebtn" />
+        android:background="@drawable/btn_planet"
+        android:layout_gravity="center_horizontal"/>
 
     <ImageButton
         android:id="@+id/btn_store_p"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/planetbtn"
-        android:layout_marginTop="50dp"/>
+        android:background="@drawable/btn_grazie"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"/>
 
 
 </LinearLayout>
