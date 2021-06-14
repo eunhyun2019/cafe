@@ -69,7 +69,7 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal">
                                     <Button
-                                        android:id="@+id/btn_coffe"
+                                        android:id="@+id/btn_coffee"
                                         android:layout_weight="1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -133,10 +133,11 @@
                                         android:textColor="#303030"/>
                                 </LinearLayout>
                             </HorizontalScrollView>
+
                             <ListView
                                 android:id="@+id/listMenuView"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="match_parent" />
                         </LinearLayout>
 
                         <LinearLayout
