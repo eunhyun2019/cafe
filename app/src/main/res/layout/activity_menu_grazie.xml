@@ -134,9 +134,9 @@
                                 </LinearLayout>
                             </HorizontalScrollView>
                             <ListView
-                            android:id="@+id/listMenuView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                                android:id="@+id/listMenuView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
                         </LinearLayout>
 
                         <LinearLayout
