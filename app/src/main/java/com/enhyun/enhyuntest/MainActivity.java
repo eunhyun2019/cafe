@@ -3,6 +3,7 @@ package com.enhyun.enhyuntest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView value;
     RadioGroup hot_ice_Group;
     RadioButton hot_btn, ice_btn;
+    Button OrderNow_btn;
 
 
     int count = 0;
@@ -33,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         Button cup_btn = (Button) findViewById(R.id.cup_btn);
         Button option_btn = (Button) findViewById(R.id.option_btn);
 
+        OrderNow_btn=findViewById(R.id.OrderNow_btn);
+        OrderNow_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(MainActivity.this, Payment_AC.class);
+                startActivity(intent1);
+            }
+        });
 
         // 커스텀 다이얼로그 호출할 클릭 이벤트 리스너 정의
         size_btn.setOnClickListener(new View.OnClickListener() {

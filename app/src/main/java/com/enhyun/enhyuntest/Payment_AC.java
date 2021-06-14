@@ -1,5 +1,6 @@
 package com.enhyun.enhyuntest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -177,6 +178,8 @@ public class Payment_AC extends AppCompatActivity {
                                     @Override
                                     public void onClose(String message) {
                                         Log.d("close", "close");
+                                        Intent intent=new Intent(Payment_AC.this,Receipt.class);
+                                        startActivity(intent);
                                     }
                                 })
                         .request();
@@ -242,6 +245,8 @@ public class Payment_AC extends AppCompatActivity {
                                     @Override
                                     public void onClose(String message) {
                                         Log.d("close", "close");
+                                        Intent intent=new Intent(Payment_AC.this,Receipt.class);
+                                        startActivity(intent);
                                     }
                                 })
                         .request();
@@ -307,7 +312,10 @@ public class Payment_AC extends AppCompatActivity {
                                     @Override
                                     public void onClose(String message) {
                                         Log.d("close", "close");
+                                        Intent intent=new Intent(Payment_AC.this,Receipt.class);
+                                        startActivity(intent);
                                     }
+
                                 })
                         .request();
             }
