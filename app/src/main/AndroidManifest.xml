@@ -3,6 +3,7 @@
     package="com.enhyun.enhyuntest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -14,17 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnhyunTest"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Receipt"></activity>
+        <activity android:name=".Receipt" />
         <activity android:name=".Join_terms_AC" />
         <activity android:name=".Login_AC" />
-        <activity android:name=".Start_AC" />
-        <activity android:name=".Store_AC">
+        <activity android:name=".Start_AC">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Store_AC"></activity>
         <activity android:name=".Join_AC" />
         <activity android:name=".Menu_G_AC" />
         <activity android:name=".Menu_P_AC" />

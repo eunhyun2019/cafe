@@ -1,48 +1,29 @@
 package com.enhyun.enhyuntest;
 
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.ProgressDialog;
 import android.app.TabActivity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 
 public class Menu_G_AC extends TabActivity {
     Button btnCoffee, btnLatte, btnTeaLatte, btnBubble, btnSmoodie, btnAde, btnDessert;
     ListView listFavView;
-    ImageView imageView1;
     ListView listMenuView;
-    private ListViewAdapter adapter;
+    MenuAdapter menuAdapter;
+
+  ArrayList<MenuItem> menuItems=new ArrayList<>();
 
 
 
@@ -53,6 +34,8 @@ public class Menu_G_AC extends TabActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_grazie);
+
+        loadMenuItem();
 
         TabHost tabHost = getTabHost();
 
@@ -73,40 +56,88 @@ public class Menu_G_AC extends TabActivity {
         btnSmoodie = findViewById(R.id.btn_smoodie);
         btnAde = findViewById(R.id.btn_ade);
         btnDessert = findViewById(R.id.btn_dessert);
+
+        //메뉴 리스트 적용, 리니어 레이아웃에 리스트를 붙이는 역할
         listMenuView = findViewById(R.id.listMenuView);
+        menuAdapter=new MenuAdapter(getLayoutInflater(),menuItems);
+        listMenuView.setAdapter(menuAdapter);
+
         listFavView = findViewById(R.id.listFavView);
-
-        adapter=new ListViewAdapter();
-
-        listMenuView.setAdapter(adapter);
-
-        adapter.addItem(R.drawable.menu_image_btn_1);
-        adapter.addItem(R.drawable.menu_image_btn_2);
-        adapter.addItem(R.drawable.menu_image_btn_3);
-        adapter.addItem(R.drawable.menu_image_btn_4);
-        adapter.addItem(R.drawable.menu_image_btn_5);
-        adapter.addItem(R.drawable.menu_image_btn_6);
-        adapter.addItem(R.drawable.menu_image_btn_7);
-        adapter.addItem(R.drawable.menu_image_btn_8);
-        adapter.addItem(R.drawable.menu_image_btn_9);
-
-        adapter.notifyDataSetChanged();
-
-        listMenuView.setOnItemClickListener(listener);
 
     }
 
-    AdapterView.OnItemClickListener listener=new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            switch (position){
-                case 0:
-                    Intent intent1=new Intent(Menu_G_AC.this, MainActivity.class);
-                    startActivity(intent1);
-                    break;
+    void loadMenuItem(){
+        new Thread(){
+            @Override
+            public void run(){
+                String serverURi="http://192.168.161.1/loadDB_test.php";
 
+                try{
+                    URL url=new URL(serverURi);
+
+                    HttpURLConnection connection=(HttpURLConnection)url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setDoInput(true);
+                    connection.setUseCaches(false);
+
+                    InputStream is=connection.getInputStream();
+                    InputStreamReader isr=new InputStreamReader(is);
+                    BufferedReader reader=new BufferedReader(isr);
+
+                    final StringBuffer buffer=new StringBuffer();
+                    String line=reader.readLine();
+                    while(line != null){
+                        buffer.append(line+"\n");
+                        line=reader.readLine();
+                    }
+
+                    String[] rows=buffer.toString().split(";");
+
+                    menuItems.clear();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            menuAdapter.notifyDataSetChanged();
+                        }
+                    });
+
+                    for(String row:rows){
+                        String[] datas=row.split("&");
+                        if(datas.length!=5){
+                            continue;
+                        }
+
+                        int menu_image_id=Integer.parseInt(datas[0]);
+                        int cafe_id=Integer.parseInt(datas[1]);
+                        String category=datas[2];
+                        String imgPath="http://192.168.161.1/"+datas[3];
+                        String date=datas[4];
+
+                        menuItems.add(new MenuItem(menu_image_id, cafe_id, category, imgPath, date));
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                menuAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
+                    }
+
+                }catch (MalformedURLException e){
+
+                    e.printStackTrace();
+
+                }catch (IOException e){
+
+                    e.printStackTrace();
+
+                }
             }
-        }
-    };
+        }.start();
+
+
+    }
 
 }
