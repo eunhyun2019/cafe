@@ -3,17 +3,23 @@ package com.enhyun.enhyuntest;
 
 import android.app.TabActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -23,7 +29,7 @@ public class Menu_G_AC extends TabActivity {
     ListView listMenuView;
     MenuAdapter menuAdapter;
 
-  ArrayList<MenuItem> menuItems=new ArrayList<>();
+    ArrayList<MenuItem> menuItems=new ArrayList<>();
 
 
 
@@ -35,7 +41,7 @@ public class Menu_G_AC extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_grazie);
 
-        loadMenuItem();
+        loadMenuItem("http://192.168.161.1/loadDB_test.php");
 
         TabHost tabHost = getTabHost();
 
@@ -64,13 +70,16 @@ public class Menu_G_AC extends TabActivity {
 
         listFavView = findViewById(R.id.listFavView);
 
+
     }
 
-    void loadMenuItem(){
+
+    void loadMenuItem(String uri){
         new Thread(){
             @Override
             public void run(){
-                String serverURi="http://192.168.161.1/loadDB_test.php";
+
+                String serverURi=uri;
 
                 try{
                     URL url=new URL(serverURi);

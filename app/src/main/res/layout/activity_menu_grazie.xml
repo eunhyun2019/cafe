@@ -69,14 +69,14 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal">
                                     <Button
-                                        android:id="@+id/btn_coffe"
+                                        android:id="@+id/btn_coffee"
                                         android:layout_weight="1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:background="#00ff0000"
                                         android:text="커피"
                                         android:textSize="15sp"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030" />
                                     <Button
                                         android:id="@+id/btn_latte"
                                         android:layout_weight="1"
@@ -86,15 +86,17 @@
                                         android:text="라떼"
                                         android:textSize="15sp"
                                         android:textColor="#303030"/>
+
                                     <Button
                                         android:id="@+id/btn_teaLatte"
-                                        android:layout_weight="1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:layout_weight="1"
                                         android:background="#00ff0000"
                                         android:text="티라떼"
-                                        android:textSize="15sp"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030"
+                                        android:textSize="15sp" />
+
                                     <Button
                                         android:id="@+id/btn_bubble"
                                         android:layout_weight="1"
