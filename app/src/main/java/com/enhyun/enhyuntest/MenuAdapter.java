@@ -5,8 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -35,10 +38,14 @@ public class MenuAdapter extends BaseAdapter {
             view=inflater.inflate(R.layout.list_item, viewGroup, false);
         }
 
-        ImageView iv=view.findViewById(R.id.iv);
+        ImageView iv=(ImageView)view.findViewById(R.id.iv);
+        TextView coffee_name_txt=(TextView)view.findViewById(R.id.coffee_name_txt);
+        TextView coffee_price_txt=(TextView)view.findViewById(R.id.coffee_price_txt);
 
         MenuItem menuItem=menuItems.get(position);
 
+        coffee_name_txt.setText(menuItem.getMenu_name());
+        coffee_price_txt.setText(menuItem.getMenu_price());
         Glide.with(view).load(menuItem.getImgPath()).into(iv);
 
         return view;

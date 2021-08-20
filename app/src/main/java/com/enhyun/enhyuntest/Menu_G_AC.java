@@ -107,7 +107,7 @@ public class Menu_G_AC extends TabActivity {
 
                     for(String row:rows){
                         String[] datas=row.split("&");
-                        if(datas.length!=5){
+                        if(datas.length!=8){
                             continue;
                         }
 
@@ -116,8 +116,11 @@ public class Menu_G_AC extends TabActivity {
                         String category=datas[2];
                         String imgPath="http://192.168.161.1/"+datas[3];
                         String date=datas[4];
+                        int menu_id=Integer.parseInt(datas[5]);
+                        String menu_name=datas[6];
+                        String menu_price=datas[7];
 
-                        menuItems.add(new MenuItem(menu_image_id, cafe_id, category, imgPath, date));
+                        menuItems.add(new MenuItem(menu_image_id, cafe_id, category, imgPath, date,menu_id, menu_name, menu_price));
 
                         runOnUiThread(new Runnable() {
                             @Override
