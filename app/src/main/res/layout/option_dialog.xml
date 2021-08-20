@@ -62,11 +62,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="300dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,23 +79,23 @@
                     android:id="@+id/shot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:padding="15dp"
                     android:text="에스프레소 샷"
-                    android:textSize="15sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"/>
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
-                    >
+                    android:layout_margin="20dp">
+
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="45dp"
                         android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:text="500원"
                         android:textColor="#1BB39C"
                         android:textSize="15sp"
@@ -105,34 +107,34 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/decrement"
+                        android:id="@+id/decrement_shot"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/minus"
-                        android:text="-"/>
+                        android:text="-" />
+
                     <TextView
+                        android:id="@+id/add_shot"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/add_shot">
-                    </TextView>
+                        android:text="0"
+                        android:textSize="20sp"></TextView>
 
                     <ImageButton
+                        android:id="@+id/increment_shot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/plus"
-                        android:id="@+id/increment"
                         android:background="#00ff0000"
-                        android:text="+"/>
+                        android:src="@drawable/plus"
+                        android:text="+" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -146,23 +148,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:padding="15dp"
                     android:text="휘핑크림"
-                    android:textSize="15sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"/>
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
-                    >
+                    android:layout_margin="20dp">
+
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="45dp"
                         android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:text="500원"
                         android:textColor="#1BB39C"
                         android:textSize="15sp"
@@ -174,34 +176,37 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/decrement_whip"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:onClick="decrement"
                         android:src="@drawable/minus"
 
-                        android:text="-"/>
+                        android:text="-" />
+
                     <TextView
+                        android:id="@+id/add_whipping"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/add_whipping">
-                    </TextView>
+                        android:text="0"
+                        android:textSize="20sp"></TextView>
+
                     <ImageButton
+                        android:id="@+id/increment_whip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="#00ff0000"
                         android:onClick="increment"
                         android:src="@drawable/plus"
-                        android:background="#00ff0000"
-                        android:text="+"/>
+                        android:text="+" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -215,23 +220,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:padding="15dp"
                     android:text="시럽(카라멜)"
-                    android:textSize="15sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"/>
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
-                    >
+                    android:layout_margin="20dp">
+
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="45dp"
                         android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:text="500원"
                         android:textColor="#1BB39C"
                         android:textSize="15sp"
@@ -242,34 +247,36 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/decrement_caramel"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:onClick="decrement"
                         android:src="@drawable/minus"
+                        android:text="-" />
 
-                        android:text="-"/>
                     <TextView
+                        android:id="@+id/add_caramel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/add_caramel">
-                    </TextView>
+                        android:text="0"
+                        android:textSize="20sp"></TextView>
+
                     <ImageButton
+                        android:id="@+id/increment_caramel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="#00ff0000"
                         android:onClick="increment"
                         android:src="@drawable/plus"
-                        android:background="#00ff0000"
-                        android:text="+"/>
+                        android:text="+" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -283,23 +290,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:padding="15dp"
                     android:text="시럽(헤이즐넛)"
-                    android:textSize="15sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"/>
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
-                    >
+                    android:layout_margin="20dp">
+
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="45dp"
                         android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:text="500원"
                         android:textColor="#1BB39C"
                         android:textSize="15sp"
@@ -310,34 +317,37 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/decrement_hazelnut"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:onClick="decrement"
                         android:src="@drawable/minus"
 
-                        android:text="-"/>
+                        android:text="-" />
+
                     <TextView
+                        android:id="@+id/add_hazelnut"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/add_hazelnut">
-                    </TextView>
+                        android:text="0"
+                        android:textSize="20sp"></TextView>
+
                     <ImageButton
+                        android:id="@+id/increment_hazelnut"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="#00ff0000"
                         android:onClick="increment"
                         android:src="@drawable/plus"
-                        android:background="#00ff0000"
-                        android:text="+"/>
+                        android:text="+" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -351,23 +361,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:padding="15dp"
                     android:text="시럽(바닐라)"
-                    android:textSize="15sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"/>
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
-                    >
+                    android:layout_margin="20dp">
+
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="45dp"
                         android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:text="500원"
                         android:textColor="#1BB39C"
                         android:textSize="15sp"
@@ -378,34 +388,37 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/decrement_vanilla"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:onClick="decrement"
                         android:src="@drawable/minus"
 
-                        android:text="-"/>
+                        android:text="-" />
+
                     <TextView
+                        android:id="@+id/add_vanilla"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/add_vanilla">
-                    </TextView>
+                        android:text="0"
+                        android:textSize="20sp"></TextView>
+
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="increment"
-                        android:src="@drawable/plus"
                         android:background="#00ff0000"
-                        android:text="+"/>
+                        android:onClick="increment"
+                        android:id="@+id/increment_vanilla"
+                        android:src="@drawable/plus"
+                        android:text="+" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -419,23 +432,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:padding="15dp"
                     android:text="타피오카펄"
-                    android:textSize="15sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"/>
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
-                    >
+                    android:layout_margin="20dp">
+
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="45dp"
                         android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:text="500원"
                         android:textColor="#1BB39C"
                         android:textSize="15sp"
@@ -446,39 +459,43 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/decrement_bubble"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:onClick="decrement"
                         android:src="@drawable/minus"
 
-                        android:text="-"/>
+                        android:text="-" />
+
                     <TextView
+                        android:id="@+id/add_bubble"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/add_bubble">
-                    </TextView>
+                        android:text="0"
+                        android:textSize="20sp"></TextView>
+
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="increment"
-                        android:src="@drawable/plus"
                         android:background="#00ff0000"
-                        android:text="+"/>
+                        android:onClick="increment"
+                        android:id="@+id/increment_bubble"
+                        android:src="@drawable/plus"
+                        android:text="+" />
                 </LinearLayout>
 
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

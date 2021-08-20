@@ -21,15 +21,19 @@
         <activity android:name=".Start_AC">
 
         </activity>
-        <activity android:name=".Store_AC"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Store_AC">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Join_AC" />
         <activity android:name=".Menu_G_AC" />
         <activity android:name=".Menu_P_AC" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+
+        </activity>
         <activity android:name=".Payment_AC" />
     </application>
 
