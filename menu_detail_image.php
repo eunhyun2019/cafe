@@ -9,7 +9,7 @@
  
 
     //쿼리문 작성
-    $sql="select tmi.* ,tm.menu_name, tm.menu_price from t_menu_image tmi JOIN t_menu tm ON tmi.menu_id =tm.menu_id;";
+    $sql="select tmi.menu_image_id, tmi.cafe_id, tmi.category, tmi.imgPath, tm.menu_id, tm.menu_name, tm.menu_price from t_menu_image tmi JOIN t_menu tm ON(tmi.menu_id=tm.menu_id AND tm.menu_id=tmi.menu_id);";
     $result=mysqli_query($conn, $sql);
  
     //$result : 결과 표
@@ -21,7 +21,7 @@
     for($i=0; $i<$rowCnt; $i++){
         //데이터 한줄을 연관배열(키값으로 구분)로 받아오기
         $row= mysqli_fetch_array($result, MYSQLI_ASSOC);
-        echo "$row[menu_image_id]&$row[cafe_id]&$row[category]&$row[imgPath]&$row[date]&$row[menu_id]&$row[menu_name]&$row[menu_price];";
+        echo "$row[menu_image_id]&$row[cafe_id]&$row[category]&$row[imgPath]&$row[menu_id]&$row[menu_name]&$row[menu_price];";
     }
  
     mysqli_close($conn);
