@@ -19,6 +19,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent=getIntent();
+        coffee_name=(TextView)findViewById(R.id.coffee_name_txt);
+        coffee_price=(TextView)findViewById(R.id.coffee_price_txt);
+        ImageView coffee_image=(ImageView)findViewById(R.id.coffee_image);
+
+        coffee_name.setText(intent.getStringExtra("menu_name"));
+        coffee_price.setText(intent.getStringExtra("menu_price"));
+        Glide.with(getApplicationContext()).load(intent.getStringExtra("imagePath")).into(coffee_image);
+
         value = (TextView) findViewById(R.id.value);
         hot_ice_Group = (RadioGroup) findViewById(R.id.hot_ice_Group);
         hot_btn = (RadioButton) findViewById(R.id.hot_btn);
@@ -59,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         OrderNow_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent(MainActivity.this, Payment_AC.class);
-                startActivity(intent1);
+                Intent intent=new Intent(MainActivity.this, Payment_AC.class);
+                startActivity(intent);
             }
         });
 

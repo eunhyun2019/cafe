@@ -3,13 +3,24 @@ package com.enhyun.enhyuntest;
 
 import android.app.TabActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,22 +63,30 @@ public class Menu_G_AC extends TabActivity {
 
         tabHost.setCurrentTab(0);
 
-        btnCoffee = findViewById(R.id.btn_coffe);
-        btnLatte = findViewById(R.id.btn_latte);
-        btnTeaLatte = findViewById(R.id.btn_teaLatte);
-        btnBubble = findViewById(R.id.btn_bubble);
-        btnSmoodie = findViewById(R.id.btn_smoodie);
-        btnAde = findViewById(R.id.btn_ade);
-        btnDessert = findViewById(R.id.btn_dessert);
 
         //메뉴 리스트 적용, 리니어 레이아웃에 리스트를 붙이는 역할
         listMenuView = findViewById(R.id.listMenuView);
         menuAdapter=new MenuAdapter(getLayoutInflater(),menuItems);
         listMenuView.setAdapter(menuAdapter);
 
+
         listFavView = findViewById(R.id.listFavView);
 
+        listMenuView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("imagePath","http://192.168.161.1/"+menuItems.get(position).getImgPath());
+                intent.putExtra("menu_name",menuItems.get(position).getMenu_name());
+                intent.putExtra("menu_price",menuItems.get(position).getMenu_price());
+                startActivity(intent);
+
+            }
+        });
+
+
     }
+
 
     void loadMenuItem(){
         new Thread(){

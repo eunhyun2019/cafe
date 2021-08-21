@@ -132,13 +132,14 @@
                                         android:background="#00ff0000"
                                         android:text="디저트"
                                         android:textSize="15sp"
+                                        android:backgroundTint="@color/purple_200"
                                         android:textColor="#303030"/>
                                 </LinearLayout>
                             </HorizontalScrollView>
                             <ListView
                                 android:id="@+id/listMenuView"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content" />
                         </LinearLayout>
 
                         <LinearLayout
