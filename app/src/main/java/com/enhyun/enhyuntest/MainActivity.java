@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -37,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
     RadioButton hot_btn, ice_btn;
     Button OrderNow_btn;
     Button option_btn;
-    TextView coffee_name, coffee_price;
+    TextView coffee_name, coffee_price, option_intent_txt;
+    LinearLayout option_layout;
+
+    String this_add_shot, this_add_whipping, this_add_caramel, this_add_hazelnut, this_add_vanilla, this_add_bubble;
 
     int menu_id;
 
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         coffee_price=(TextView)findViewById(R.id.coffee_price_txt);
         ImageView coffee_image=(ImageView)findViewById(R.id.coffee_image);
 
+        option_layout=findViewById(R.id.option_layout);
+
         coffee_name.setText(intent.getStringExtra("menu_name"));
         coffee_price.setText(intent.getStringExtra("menu_price"));
         Glide.with(getApplicationContext()).load(intent.getStringExtra("imagePath")).into(coffee_image);
@@ -65,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         Button size_btn = (Button) findViewById(R.id.size_btn);
         Button cup_btn = (Button) findViewById(R.id.cup_btn);
         option_btn = (Button) findViewById(R.id.option_btn);
+
+        option_intent_txt=(TextView) findViewById(R.id.option_intent_txt);
 
         OrderNow_btn=findViewById(R.id.OrderNow_btn);
         OrderNow_btn.setOnClickListener(new View.OnClickListener() {
@@ -101,10 +109,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        option_btn.setOnClickListener(option_btn_Listener);
+        option_btn.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                option_intent_txt.setText("선택한 옵션: ");
+                switch (v.getId()){
+                    case R.id.option_btn:
+                        OptionDialog optionDialog=new OptionDialog(MainActivity.this);
+                        optionDialog.setOptionDialogListener(new OptionDialog.OptionDialogListener() {
+                            @Override
+                            public void onPositiveClicked(String option_result, String add_shot, String add_whipping, String add_caramel, String add_hazelnut, String add_vanilla, String add_bubble) {
+                                //가져온 add_shot을 출력할 부분에 붙여넣기 하면 됨
+                                option_intent_txt.append(option_result);
+                            }
+
+                            @Override
+                            public void onNegativeClicked() {
+                            }
+                        });
+                        optionDialog.show();
+                        break;
+                }
+                if(option_intent_txt.getText().toString()=="선택한 옵션: "){
+                    option_layout.setVisibility(View.GONE);
+
+                }else{
+                    option_layout.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
     }
 
-    View.OnClickListener option_btn_Listener=new View.OnClickListener() {
+    /*View.OnClickListener option_btn_Listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
@@ -112,9 +151,9 @@ public class MainActivity extends AppCompatActivity {
                     OptionDialog optionDialog=new OptionDialog(MainActivity.this);
                     optionDialog.setOptionDialogListener(new OptionDialog.OptionDialogListener() {
                         @Override
-                        public void onPositiveClicked(String add_shot, String add_whipping, String add_caramel, String add_hazelnut, String add_vanilla, String add_bubble) {
+                        public void onPositiveClicked(String option_result, String add_shot, String add_whipping, String add_caramel, String add_hazelnut, String add_vanilla, String add_bubble) {
                             //가져온 add_shot을 출력할 부분에 붙여넣기 하면 됨
-                            option_btn.setText(add_shot+add_whipping);
+                            option_intent_txt.append(option_result);
                         }
 
                         @Override
@@ -126,6 +165,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
-    };
+    };*/
 
 }
