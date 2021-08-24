@@ -1,25 +1,26 @@
 package com.enhyun.enhyuntest;
 
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.bumptech.glide.Glide;
 
 import java.io.BufferedReader;
@@ -28,8 +29,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
-import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     TextView coffee_name, coffee_price, option_intent_txt;
     LinearLayout option_layout;
     TextView option_txt;
+    ImageView coffee_image;
+    Bitmap bmImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,26 +54,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=getIntent();
         coffee_name=(TextView)findViewById(R.id.coffee_name_txt);
         coffee_price=(TextView)findViewById(R.id.coffee_price_txt);
-        ImageView coffee_image=(ImageView)findViewById(R.id.coffee_image);
+        coffee_image=findViewById(R.id.coffee_image);
 
         option_layout=findViewById(R.id.option_layout);
 
         coffee_name.setText(intent.getStringExtra("menu_name"));
         coffee_price.setText(intent.getStringExtra("menu_price"));
-        Glide.with(getApplicationContext()).load(intent.getStringExtra("imagePath")).into(coffee_image);
+        String menu_image=intent.getStringExtra("imagePath");
+        sendImageRequest(menu_image);
+        //Glide.with(getApplicationContext()).load("http://192.168.161.1/"+menu_image).into(coffee_image);
 
         option_txt=findViewById(R.id.option_txt);
 
-        option_txt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(option_layout.getVisibility()==View.VISIBLE){
-                    option_layout.setVisibility(View.GONE);
-                }else{
-                    option_layout.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+        option_txt.setOnClickListener(option_txt_clickListener);
 
         value = (TextView) findViewById(R.id.value);
         hot_ice_Group = (RadioGroup) findViewById(R.id.hot_ice_Group);
@@ -132,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onPositiveClicked(String option_result, String add_shot, String add_whipping, String add_caramel, String add_hazelnut, String add_vanilla, String add_bubble) {
                                 //가져온 add_shot을 출력할 부분에 붙여넣기 하면 됨
                                 option_intent_txt.append(option_result);
+                                option_layout.setVisibility(View.VISIBLE);
                             }
 
                             @Override
@@ -152,28 +150,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*View.OnClickListener option_btn_Listener=new View.OnClickListener() {
+    View.OnClickListener option_txt_clickListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.option_btn:
-                    OptionDialog optionDialog=new OptionDialog(MainActivity.this);
-                    optionDialog.setOptionDialogListener(new OptionDialog.OptionDialogListener() {
-                        @Override
-                        public void onPositiveClicked(String option_result, String add_shot, String add_whipping, String add_caramel, String add_hazelnut, String add_vanilla, String add_bubble) {
-                            //가져온 add_shot을 출력할 부분에 붙여넣기 하면 됨
-                            option_intent_txt.append(option_result);
-                        }
-
-                        @Override
-                        public void onNegativeClicked() {
-
-                        }
-                    });
-                    optionDialog.show();
-                    break;
+            if(option_layout.getVisibility()==View.VISIBLE){
+                option_layout.setVisibility(View.GONE);
+            }else{
+                option_layout.setVisibility(View.VISIBLE);
             }
         }
-    };*/
+    };
 
+    public void sendImageRequest(String menu_image){
+        ImageLoadTask task=new ImageLoadTask(menu_image,coffee_image);
+        task.execute();
+    }
 }

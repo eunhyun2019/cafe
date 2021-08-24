@@ -76,7 +76,7 @@ public class Menu_G_AC extends TabActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("imagePath","http://192.168.161.1/"+menuItems.get(position).getImgPath());
+                intent.putExtra("imagePath",menuItems.get(position).getImgPath());
                 intent.putExtra("menu_name",menuItems.get(position).getMenu_name());
                 intent.putExtra("menu_price",menuItems.get(position).getMenu_price());
                 startActivity(intent);

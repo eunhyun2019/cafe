@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -23,6 +24,7 @@ public class OptionDialog extends Dialog{
     static TextView add_shot, add_whipping, add_caramel, add_hazelnut, add_vanilla, add_bubble;
     private Context context;
     TextView option_result_txt;
+    LinearLayout option_layout;
 
     int count_shot;
     int count_whip;
@@ -62,6 +64,7 @@ public class OptionDialog extends Dialog{
         add_vanilla=findViewById(R.id.add_vanilla);
         add_bubble=findViewById(R.id.add_bubble);
         option_result_txt=findViewById(R.id.option_intent_txt);
+        option_layout=findViewById(R.id.option_layout);
 
 
         final ImageButton increment_shot=findViewById(R.id.increment_shot);
@@ -77,9 +80,6 @@ public class OptionDialog extends Dialog{
         final ImageButton increment_bubble=findViewById(R.id.increment_bubble);
         final ImageButton decrement_bubble=findViewById(R.id.decrement_bubble);
 
-
-        //Intent intent1= intent1.getIntent();
-        //add_shot.setText(intent1.getStringExtra("add_shot"));
 
 
         increment_shot.setOnClickListener(new View.OnClickListener() {
