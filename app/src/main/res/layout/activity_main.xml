@@ -315,7 +315,8 @@
                                 android:padding="15dp"
                                 android:layout_alignParentLeft="true"
                                 android:text="옵션"
-                                android:textSize="18sp"/>
+                                android:textSize="18sp"
+                                android:id="@+id/option_txt"/>
                             <Button
                                 android:id="@+id/option_btn"
                                 android:layout_centerInParent="true"

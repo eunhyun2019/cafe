@@ -40,12 +40,8 @@ public class MainActivity extends AppCompatActivity {
     Button option_btn;
     TextView coffee_name, coffee_price, option_intent_txt;
     LinearLayout option_layout;
+    TextView option_txt;
 
-    String this_add_shot, this_add_whipping, this_add_caramel, this_add_hazelnut, this_add_vanilla, this_add_bubble;
-
-    int menu_id;
-
-    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +57,19 @@ public class MainActivity extends AppCompatActivity {
         coffee_name.setText(intent.getStringExtra("menu_name"));
         coffee_price.setText(intent.getStringExtra("menu_price"));
         Glide.with(getApplicationContext()).load(intent.getStringExtra("imagePath")).into(coffee_image);
+
+        option_txt=findViewById(R.id.option_txt);
+
+        option_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(option_layout.getVisibility()==View.VISIBLE){
+                    option_layout.setVisibility(View.GONE);
+                }else{
+                    option_layout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         value = (TextView) findViewById(R.id.value);
         hot_ice_Group = (RadioGroup) findViewById(R.id.hot_ice_Group);
