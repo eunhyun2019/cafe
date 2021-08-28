@@ -394,6 +394,7 @@
                         android:orientation="horizontal">
 
                         <Button
+                            android:id="@+id/hotlist_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="3dp"
@@ -402,7 +403,8 @@
                             android:layout_alignParentLeft="true"
                             android:text="즐겨찾기 추가"
                             android:background="@drawable/btn_str1"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            tools:ignore="InvalidId" />
 
                         <Button
 

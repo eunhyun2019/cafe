@@ -76,7 +76,10 @@
                                         android:background="#00ff0000"
                                         android:text="커피"
                                         android:textSize="15sp"
-                                        android:textColor="#303030" />
+                                        android:textColor="#303030"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
                                     <Button
                                         android:id="@+id/btn_latte"
                                         android:layout_weight="1"
@@ -85,7 +88,10 @@
                                         android:background="#00ff0000"
                                         android:text="라떼"
                                         android:textSize="15sp"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
 
                                     <Button
                                         android:id="@+id/btn_teaLatte"
@@ -95,7 +101,10 @@
                                         android:background="#00ff0000"
                                         android:text="티라떼"
                                         android:textColor="#303030"
-                                        android:textSize="15sp" />
+                                        android:textSize="15sp"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
 
                                     <Button
                                         android:id="@+id/btn_bubble"
@@ -105,7 +114,10 @@
                                         android:background="#00ff0000"
                                         android:text="버블티"
                                         android:textSize="15sp"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
                                     <Button
                                         android:id="@+id/btn_smoodie"
                                         android:layout_weight="1"
@@ -114,7 +126,10 @@
                                         android:background="#00ff0000"
                                         android:text="스무디"
                                         android:textSize="15sp"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
                                     <Button
                                         android:id="@+id/btn_ade"
                                         android:layout_weight="1"
@@ -123,7 +138,10 @@
                                         android:background="#00ff0000"
                                         android:text="에이드"
                                         android:textSize="15sp"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
                                     <Button
                                         android:id="@+id/btn_dessert"
                                         android:layout_weight="1"
@@ -133,7 +151,10 @@
                                         android:text="디저트"
                                         android:textSize="15sp"
                                         android:backgroundTint="@color/purple_200"
-                                        android:textColor="#303030"/>
+                                        android:textColor="#303030"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"/>
                                 </LinearLayout>
                             </HorizontalScrollView>
                             <ListView
