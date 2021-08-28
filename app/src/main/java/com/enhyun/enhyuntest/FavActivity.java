@@ -114,12 +114,12 @@ public class FavActivity extends AppCompatActivity {
                         String menu_name=datas[6];
                         String menu_price=datas[7];
 
-                        favmenuItems.add(new FavMenuItem(menu_image_id, cafe_id, category, imgPath, date,menu_id, menu_name, menu_price));
 
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                favAdpater.notifyDataSetInvalidated();
+                                favmenuItems.add(new FavMenuItem(menu_image_id, cafe_id, category, imgPath, date,menu_id, menu_name, menu_price));
+                                favAdpater.notifyDataSetChanged();
                             }
                         });
 
