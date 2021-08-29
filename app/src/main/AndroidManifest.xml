@@ -15,21 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnhyunTest"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BasketActivity">
-
-        </activity>
+        <activity android:name=".ShowPswd_AC"></activity>
+        <activity android:name=".ShowId_AC" />
+        <activity android:name=".FindPswd_AC" />
+        <activity android:name=".FindId_AC" />
+        <activity android:name=".BasketActivity" />
         <activity android:name=".FavActivity" />
         <activity android:name=".Receipt" />
         <activity android:name=".Join_terms_AC" />
         <activity android:name=".Login_AC" />
-        <activity android:name=".Start_AC" />
-        <activity android:name=".Store_AC">
+        <activity android:name=".Start_AC">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Store_AC" />
         <activity android:name=".Join_AC" />
         <activity android:name=".Menu_G_AC" />
         <activity android:name=".Menu_P_AC" />

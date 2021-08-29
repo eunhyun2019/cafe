@@ -45,11 +45,11 @@ public class Login_AC extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.button:
-                    Intent intent1=new Intent(Login_AC.this, Start_AC.class);
+                    Intent intent1=new Intent(Login_AC.this, FindId_AC.class);
                     startActivity(intent1);
                     break;
                 case R.id.button2:
-                    Intent intent2 =new Intent(Login_AC.this, Login_AC.class);
+                    Intent intent2 =new Intent(Login_AC.this, FindPswd_AC.class);
                     startActivity(intent2);
                     break;
                 case R.id.button4:
